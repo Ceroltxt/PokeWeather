@@ -5,16 +5,16 @@ const OPENWEATHER_KEY = '0eebef0baab363472a084878ddb2cb19';
 
 //Bloco de if´s que definem o background e a cor do main_card de acordo com o horário.
 if (timestamp >= 5 && timestamp < 7) {
-  bg.classList.add('bg-[url(./imgs/morning.png)]');
+  bg.classList.add('bg-[url(./morning.png)]');
   card.classList.add('bg-orange-200');
 } else if (timestamp >= 7 && timestamp < 17) {
-  bg.classList.add('bg-[url(./imgs/default.png)]');
+  bg.classList.add('bg-[url(./default.png)]');
   card.classList.add('bg-cyan-200');
 } else if (timestamp >= 17 && timestamp < 19) {
-  bg.classList.add('bg-[url(./imgs/afternoon.png)]');
+  bg.classList.add('bg-[url(./afternoon.png)]');
   card.classList.add('bg-orange-200');
 } else {
-  bg.classList.add('bg-[url(./imgs/night.png)]');
+  bg.classList.add('bg-[url(./night.png)]');
   card.classList.add('bg-violet-300');
 }
 
@@ -123,3 +123,4 @@ function renderPokemons(pokemonsData) {
     container.appendChild(img);
   });
 }
+
