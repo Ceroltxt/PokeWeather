@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <title>PokéWeather</title>
+
+</head>
+<body class="font-[Poppins,sans-serif]">
+
+<div id="background"
+class="
+bg-cover 
+bg-center 
+min-h-[100svh]  
+flex 
+flex-col
+
+items-center 
+gap-4
+justify-center
+md:bg-fixed
+px-4">
+
+    <div id="search"
+        class="
+        bg-white
+        w-full
+        max-w-sm
+        h-12
+        rounded-md
+        px-3
+        flex
+        items-center
+        shadow
+    "
+    >
+    <form  class="flex items-center w-full gap-2 z-50">
+
+        <input
+        type="search"
+        name="city_name"
+        id="city_name"
+        placeholder="Buscar cidade..."
+        class="w-full outline-none text-sm"
+        />
+
+        <button type="submit">
+        <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+        </button>
+
+    </form>
+    </div>
+
+
+        <div id ="main-card"
+
+        class="
+        w-full
+        max-w-md
+        sm:max-w-lg
+        lg:max-w-lg
+        h-auto
+        min-h-96
+        sm:min-h-[500px]
+        lg:min-h-[600px]
+        hidden
+        relative
+        backdrop-blur-[2px]
+        rounded-2xl
+        border
+    
+        border-white
+        before:content-[' '] 
+        before:absolute
+        before:insert-0
+        before:border
+        before:border-white/10
+        flex-col
+        items-center
+        gap-3
+        sm:gap-4
+        p-4
+        sm:p-6
+        \">
+
+            <img id="icon" alt="" class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40">
+            <h2 id="celsius" class="text-slate-50 text-6xl sm:text-7xl lg:text-8xl font-semibold "> </h2>
+
+            <p id="weather_desc" class="font-semibold text-2xl sm:text-lg lg:text-xl text-slate-50"></p>
+
+        <div id="infos"
+            class="flex w-full">
+
+                <div class="flex  sm:flex-row pt-3 text-slate-50 font-medium gap-6 sm:gap-10 w-full justify-center">
+
+                    <div class="flex gap-2 sm:gap-3 items-center">
+                    <i class="fa-solid fa-wind text-4xl sm:text-5xl lg:text-6xl text-slate-50"></i> <div class="flex flex-col"> 
+                        <span id="wind_speed" class="text-lg sm:text-xl lg:text-2xl"></span> 
+                        <span class="text-xs sm:text-sm">Força do Vento</span>
+                    </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-3 items-center">
+                    <i class="fa-solid fa-droplet text-4xl sm:text-5xl lg:text-6xl"></i> <div class="flex flex-col"> 
+                        <span id="humidity_level" class="text-lg sm:text-xl lg:text-2xl"></span> 
+                        <span class="text-xs sm:text-sm">Umidade</span>
+                    </div>
+                    </div>
+            
+
+                </div>
+
+            </div>
+
+        <div id="infos"
+            class="flex w-full">
+
+                <div class="flex sm:flex-row pt-3 text-slate-50 font-medium gap-6 sm:gap-10 w-full justify-center">
+
+                    <div class="flex gap-2 sm:gap-3 items-center">
+                <i class="fa-solid fa-temperature-arrow-up text-3xl sm:text-4xl lg:text-5xl"></i> <div class="flex flex-col"> 
+                        <span id="max_temp" class="text-lg sm:text-xl lg:text-2xl"></span> 
+                        <span class="text-xs sm:text-sm">Temp. Máxima</span>
+                    </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-3 items-center">
+                <i class="fa-solid fa-temperature-arrow-down text-3xl sm:text-4xl lg:text-5xl"></i> <div class="flex flex-col"> 
+                        <span id="min_temp" class="text-lg sm:text-xl lg:text-2xl"></span> 
+                        <span class="text-xs sm:text-sm">Temp. Mínima</span>
+                    </div>
+                    </div>
+            
+
+                </div>
+
+            </div>
+
+            <h2 id="location" class="text-slate-50 font-semibold text-3xl sm:text-2xl lg:text-3xl bottom-0 mt-4 text-center"></h2>
+
+        
+
+
+        </div>
+
+       
+
+</div>
+
+<div id="pokemons"
+    class="
+    fixed
+    bottom-2
+    left-0
+    right-0
+    w-full
+    h-20
+    sm:h-24
+    lg:h-32
+    flex
+    justify-around
+    items-end
+    px-2
+    sm:px-4
+    pointer-events-none
+    ">
+    
+</div>
+
+    <script src="script.js"> </script>
+</body>
+</html>
